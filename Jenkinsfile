@@ -5,7 +5,8 @@ node ('docker') {
 
     try {
         stage('Test') {
-            echo "Test";
+            echo "Test"
+            //checkout scm
         }
     } catch (e) {
         // If there was an exception thrown, the build failed
