@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-node ('docker') {
+node {
     def status = 'Started'
 
     try {
