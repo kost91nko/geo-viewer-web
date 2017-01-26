@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+<title>Geo Viewer</title>
+
+<body>
+    <div id="ribbon">
+        <div class="wrapper">
+            <div id="canvas">
+            </div>
+            <div id="controls">
+                <div id="form">
+                    <label>WKT:</label>
+                    <textarea type="text" name="wkt" id="wkt"></textarea>
+                    <label><input type="checkbox" name="urlify" id="urlify" onchange="app.urlify(this.checked);" />Format for URLs</label>
+                    <input type="submit" id="submit" value="Map It!" onclick="app.clearMap();app.mapIt();" />
+                    <input type="reset" id="reset" value="Clear Map" onclick="app.clearText();app.clearMap();" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyCa5Q9iqroI_uycfnPp6L6DYQJzda2j6zw" type="text/javascript"></script>
+    <script src="wicket.js" type="text/javascript"></script>
+    <script src="wicket-gmap3.js" type="text/javascript"></script>
+    <script src="./app.js" type="text/javascript"></script>
+    <script>
+        window.onload = function() {
+            app.gmap=app.init();
+        }
+    </script>
+</body>
+</html>
