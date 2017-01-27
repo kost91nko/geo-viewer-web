@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-node('docker') {
+node {
     def status = 'Started'
     def utils = load "/be-mobile/scripts/utils.groovy"
     def branchName = "${env.BRANCH_NAME}"
