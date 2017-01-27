@@ -1,11 +1,23 @@
 #!/usr/bin/groovy
 
-node {
+node('docker') {
     def status = 'Started'
+    def branchName = "${env.BRANCH_NAME}"
+    def buildNumber = "${env.BUILD_NUMBER}"
+    def projectName = utils.getProjectName()
+    //def version
+    //def dockerName = utilsWeb.dockerName(projectName)
 
     try {
+        // clear workspace
+        // sh "rm -rf *"
+        deleteDir()
+
         stage('Test') {
             echo "Test"
+            echo "${env.BRANCH_NAME}"
+            echo buildNumber
+            echo projectName
             //checkout scm
         }
     } catch (e) {
