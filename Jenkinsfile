@@ -1,4 +1,6 @@
 #!/usr/bin/groovy
+import hudson.model.*
+import hudson.FilePath
 
 node {
     def status = 'Started'
@@ -31,4 +33,8 @@ node {
             echo "Build status ${status}"
         }
     }
+}
+
+def getProjectName () {
+  return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().minus('.git')
 }
