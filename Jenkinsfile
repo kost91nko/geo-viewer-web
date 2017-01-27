@@ -18,8 +18,8 @@ node {
         stage('Test') {
             echo "Test"
             echo "${env.BRANCH_NAME}"
-            echo buildNumber
-            echo projectName
+            echo getProjectName()
+            //echo projectName
             //checkout scm
         }
     } catch (e) {
@@ -34,6 +34,6 @@ node {
     }
 }
 
-def getProjectName () {
-  return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().minus('.git')
+def getProjectNumber () {
+  return "${env.BUILD_NUMBER}"
 }
