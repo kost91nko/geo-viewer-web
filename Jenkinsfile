@@ -6,7 +6,7 @@ node {
     def status = 'Started'
     def branchName = "${env.BRANCH_NAME}"
     def buildNumber = "${env.BUILD_NUMBER}"
-    def projectName = utils.getProjectName()
+    def projectName = getProjectName()
     //def version
     //def dockerName = utilsWeb.dockerName(projectName)
 
