@@ -2,6 +2,7 @@
 
 node('docker') {
     def status = 'Started'
+    def utils = load "/be-mobile/scripts/utils.groovy"
     def branchName = "${env.BRANCH_NAME}"
     def buildNumber = "${env.BUILD_NUMBER}"
     def projectName = utils.getProjectName()
