@@ -18,7 +18,7 @@ node {
         stage('Test') {
             echo "Test"
             echo "${env.BRANCH_NAME}"
-            echo getProjectName()
+            echo getProjectNumber()
             //echo projectName
             //checkout scm
         }
